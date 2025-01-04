@@ -31,11 +31,14 @@ export default function Home() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:3001/api/book", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://restaurent-table-booking.vercel.app/api/book",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await res.json();
 
