@@ -11,11 +11,6 @@ export default function Home() {
   });
   const [availability, setAvailability] = useState([]);
   const [message, setMessage] = useState("");
-
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { name, value } = e.target;
-  //   setFormData({ ...formData, [name]: value });
-  // };
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
