@@ -12,9 +12,18 @@ export default function Home() {
   const [availability, setAvailability] = useState([]);
   const [message, setMessage] = useState("");
 
-  const handleChange = (e) => {
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const { name, value } = e.target;
+  //   setFormData({ ...formData, [name]: value });
+  // };
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
   const fetchAvailability = async () => {
@@ -27,9 +36,7 @@ export default function Home() {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async () => {
     try {
       const res = await fetch(
         "https://restaurent-table-booking.vercel.app/api/book",
