@@ -35,3 +35,7 @@ app.use("/api", deleteing);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+app.get("/", (req, res) => {
+  res.status(200).send("Backend is running successfully!");
+});
